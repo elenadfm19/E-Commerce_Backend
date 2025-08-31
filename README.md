@@ -6,7 +6,7 @@ This project is a **Node.js + Express + Passport.js** backend that simulates the
 Clone the repository and install the dependencies:
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/elenadfm19/E-Commerce_Backend.git
 cd italian-restaurant-backend
 npm install
 ```
