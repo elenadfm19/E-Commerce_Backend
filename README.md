@@ -7,7 +7,7 @@ Clone the repository and install the dependencies:
 
 ```bash
 git clone https://github.com/elenadfm19/E-Commerce_Backend.git
-cd italian-restaurant-backend
+cd E-Commerce_Backend
 npm install
 ```
 
