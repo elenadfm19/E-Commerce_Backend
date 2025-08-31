@@ -32,7 +32,7 @@ You can test the following endpoints:
 | POST   | `/users/register` | Register a new user           |
 | POST   | `/users/login`    | Login with email & password   |
 | POST   | `/users/logout`   | Logout current user           |
-| GE T   | `/users/profile`  | View current user profile     |
+| GET   | `/users/profile`   | View current user profile     |
 | DELETE | `/users/delete`   | Delete logged-in user profile |
 
 ### Menu
