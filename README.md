@@ -12,7 +12,7 @@ npm install
 ```
 
 ## Running the app
-This project requires a [PostgreSQL](https://www.postgresql.org/) database to be running locally. Create a file `.env` in the root folder, add the following environment variables and replace the values of those specific to your local database (variables starting with 'DB_'). 
+This project requires a [PostgreSQL](https://www.postgresql.org/) database to be running locally. Create a file `.env` in the root folder, add the following environment variables and replace the values of those specific to your local database (variables starting with 'DB_'): 
 
 DB_HOST=localhost
 
