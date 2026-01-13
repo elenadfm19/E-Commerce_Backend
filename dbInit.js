@@ -1,10 +1,15 @@
-const db = require("./db/db.js");
+// Import function responsible for creating the database if it doesn't already exist
+const createDatabase = require("./db/createDatabase.js");
 
 /*
   Initializes the PostgreSQL database by creating tables
   and seeding initial menu data if they do not already exist.
  */
 async function setupDatabase() {
+  // Ensure the database exists before trying to connect and create tables
+  await createDatabase();
+  // Import the DB pool only after the database exists (important!)
+  const db = require("./db/db.js");
   // Orders table: stores user orders, references `users`
   const ordersTable = `
         CREATE TABLE IF NOT EXISTS orders(
@@ -94,10 +99,10 @@ async function setupDatabase() {
     (27, 7.25, 'Panna Cotta', 'desserts'),
     (28, 7.95, 'Torta della Nona', 'desserts'),
     (29, 7.95, 'Torta di Mele', 'desserts'),
-    (30, 3.5, 'Water', 'softdrinks'),
-    (31, 3.5, 'Coca Cola', 'softdrinks'),
-    (32, 3.5, 'Limonata', 'softdrinks'),
-    (33, 3.5, 'Aranciata', 'softdrinks'),
+    (30, 3.5, 'Water', 'soft drinks'),
+    (31, 3.5, 'Coca Cola', 'soft drinks'),
+    (32, 3.5, 'Limonata', 'soft drinks'),
+    (33, 3.5, 'Aranciata', 'soft drinks'),
     (34, 4.75, 'Peroni Beer', 'drinks'),
     (35, 6.5, 'Prosecco', 'drinks'),
     (36, 7.25, 'Red Wine', 'drinks'),
@@ -107,8 +112,8 @@ async function setupDatabase() {
     (40, 12.75, 'Negroni', 'drinks'),
     (41, 12.75, 'Tiramisu Espresso Martini', 'drinks'),
     (42, 9.5, 'Bellini', 'drinks'),
-    (43, 2.95, 'Limoncello', 'coffee'),
-    (44, 2.95, 'Amaro Montenegro', 'coffee'),
+    (43, 2.95, 'Limoncello', 'drinks'),
+    (44, 2.95, 'Amaro Montenegro', 'drinks'),
     (45, 2, 'Espresso', 'coffee'),
     (46, 2.5, 'Macchiato', 'coffee'),
     (47, 3, 'Latte', 'coffee'),
@@ -123,7 +128,6 @@ async function setupDatabase() {
 
   try {
     // Table creation respecting the foreign key dependencies in the order of creation
-    //await db.query(dropTable);
     await db.query(usersTable);
     await db.query(ordersTable);
     await db.query(itemsTable);
@@ -141,4 +145,5 @@ async function setupDatabase() {
   }
 }
 
+// Run setup immediately
 setupDatabase();
