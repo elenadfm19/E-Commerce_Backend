@@ -12,24 +12,9 @@ npm install
 ```
 
 ## Running the app
-This project requires a [PostgreSQL](https://www.postgresql.org/) database to be running locally. Create a file `.env` in the root folder, add the following environment variables and replace the values of those specific to your local database (variables starting with 'DB_'): 
+This project requires a [PostgreSQL](https://www.postgresql.org/) database to be running locally. Modify the file `.env` in the root folder with the correct values for your local database (variables starting with 'DB_'): 
 
-DB_HOST=localhost
-
-DB_PORT=5432
-
-DB_USER=postgres
-
-DB_PASSWORD=postgres
-
-DB_NAME=restaurant
-
-SESSION_SECRET=hRYcXlTPlN6K8YoMQJfJZbXfjPovcJcB
-
-PORT=3000
-
-
-Once PostgreSQL is running you can initialize the database with the right tablse with any of those 2 commands:`npm run create-db` or `node dbInit.js`
+Once PostgreSQL is running you can initialize the database with the right tables with any of those 2 commands:`npm run create-db` or `node dbInit.js`
 
 To run the app use any of these commands: `npm run start` of `node app.js`
 
